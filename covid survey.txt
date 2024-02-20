@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>You're Covid Vaccine Experience</title>
+
+    <style>
+      /* Style for the Background of the webpage */
+      body {
+        background-color: #9a1bcc;
+        font-family: Arial;
+        text-align: center;
+      }
+
+      /* Style for the Form */
+      form {
+        background-color: #fff;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px 20px;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+
+       /* Style for the form-control Class */
+       .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Style for the form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+      /* Style for the form-control Radio
+        button and Checkbox */
+      .form-control input[type="radio"],
+      .form-control input[type="checkbox"] {
+        display: inline-block;
+        width: auto;
+      }
+
+      /* Style for the Button */
+      button {
+        background-color: #9a1bcc;
+        border: 1px solid #777;
+        border-radius: 2px;
+        font-family: inherit;
+        font-size: 21px;
+        display: block;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <h1>Covid Vaccine Experience Survey</h1>
+
+    <!-- Create Form  "action" will send the submit button to the result page-->
+    <form id="form" action="cov_surv_resul.html"> 
+        
+        <div class="form-control">
+            <label>
+                1. *This Survey is Only for Vaccinated Particapants*
+                Are you Vaccinated?
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="answer-1">
+                <input type="radio"
+                       id="answer-1"
+                       name="answer">Yes</input>
+            </label>
+            <label for="answer-2">
+                <input type="radio"
+                       id="answer-2"
+                       name="answer">No</input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label>
+                2. What is you're Age Group?
+            </label>
+
+            <!--Input Type Radio Button -->
+            <label for="agegroup-1">
+                <input type="radio"
+                       id="agegroup-1"
+                       name="agegroup" required>5-12</input>
+            </label>
+            <label for="agegroup-2">
+                <input type="radio"
+                       id="agegroup-2"
+                       name="agegroup">12-19</input>
+            </label>
+            <label for="agegroup-3">
+                <input type="radio"
+                       id="agegroup-3"
+                       name="agegroup">20-40</input>
+            </label>
+            <label for="agegroup-4">
+                <input type="radio"
+                       id="agegroup-4"
+                       name="agegroup">50-69</input>
+            </label>
+            <label for="agegroup-5">
+                <input type="radio"
+                       id="agegroup-5"
+                       name="agegroup">70+</input>
+            </label>
+        </div>
+        
+        <div class="form-control">
+            <label for="Vaccine">
+                3. Select Vaccine type:
+                <small>(Click the Dropdown icon for more vaccines)</small>
+            </label>
+
+            <!--Input Type Dropdown -->
+            <select name = "vaccines" id="vaccines">
+                <option value="pfizer">Pfizer</option>
+                <option value="maderna">Maderna</option>
+                <option value="johnsone">Johnsone</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label>
+            4. Physical Side Effects Reported
+            <small>(Check all that apply)</small>
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox"
+                       name="inp" value="Pain" onclick="return PhysicalSideEffects();">Pain</input>
+                    </label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp"value="Swelling" onclick="return PhysicalSideEffects();">Swelling</input>
+                    </label>
+            <label for="inp-3">
+                <input type="checkbox"
+                       name="inp"value="Redness" onclick="return PhysicalSideEffects();">Redness</input>
+                    </label>
+            <label for="inp-4">
+                <input type="checkbox"
+                       name="inp"value="Rash" onclick="return PhysicalSideEffects();">Rash</input>
+                    </label>
+            <label for="inp-5">
+                <input type="checkbox"
+                       name="inp"value="None" onclick="return PhysicalSideEffects();">None</input>
+                    </label>
+        </div>
+        <div class="form-control">
+            <label>
+                5. Illness Side Effects Reported
+                <small>(Check all that apply)</small>
+            </label>
+            <!--Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox"
+                       name="inp">Headache</input>
+                    </label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp">Chills</input>
+                    </label>
+            <label for="inp-3">
+                <input type="checkbox"
+                       name="inp">Dirrahea</input>
+                    </label>
+            <label for="inp-4">
+                <input type="checkbox"
+                       name="inp">Tiredness</input>
+                    </label>
+            <label for="inp-5">
+                <input type="checkbox"
+                       name="inp">Fever</input>
+                    </label>
+            <label for="inp-6">
+                <input type="checkbox"
+                       name="inp">Dizziness</input>
+                    </label>
+            <label for="inp-7">
+                <input type="checkbox"
+                       name="inp">Nausea</input>
+                    </label>
+            <label for="inp-8">
+                <input type="checkbox"
+                       name="inp">None</input>
+                    </label>
+        </div>
+        <input type="submit" value="Submit" onclick="return confirm('6. Are you sure what you have is true to your knowledge?')">
+        <!-- This function is *figure this out*(to check whether or  not the user selected an illness) & *works* make sure that they do not select another ilness if they selected "None"-->
+        <form>
+            <script type="text/javascript">  
+            
+                function PhysicalSideEffects()  
+                {  
+                    var checkboxes = document.getElementsByName("inp");  // Gets the the different checkboxes 
+                    var numberOfCheckedItems = 0;  //Holder for number of checked items
+                    for(var i = 0; i < checkboxes.length; i++)  //Loops through counting how many are checked
+                    {  
+                        if(checkboxes[i].checked)  
+                            numberOfCheckedItems++;  
+                    }  
+                    if(checkboxes[4].checked && (checkboxes[0].checked || checkboxes[1].checked || checkboxes[2].checked || checkboxes[3].checked))  
+                    {  
+                        alert("You can't select another Illness if you selected None!");  
+                        return false;  
+                    }
+                   
+                }  
+                </script> 
+  </body>
+</html>
+<!-- Next steps: Find out how to use contstraints to prevent user from submitting incomplete survey
